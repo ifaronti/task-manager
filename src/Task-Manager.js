@@ -35,7 +35,8 @@ export default function TaskManager() {
 
   return (
     <main
-      className={`xl:w-[1440px] scroll-smooth min-h-screen md:w-full pb-[150px] mx-auto sm:w-full relative bg-tasks`}
+      id="scrollbar"
+      className={`xl:w-[1440px] scroll-smooth overflow-y-scroll h-screen md:w-full mx-auto sm:w-full relative bg-tasks`}
     >
       {showModal && <GlobalModal />}
       {showModal && <GlobalModalFrames />}
@@ -47,11 +48,11 @@ export default function TaskManager() {
       <div className="sm:landscape:hidden md:landscape:flex">
         <SwitchDisplay />
       </div>
-      <div className="flex w-full sm:landscape:hidden md:landscape:flex min-h-screen">
+      <div id="scrollbar" className="flex w-full sm:landscape:hidden md:landscape:flex h-screen overflow-y-scroll">
         <SideBar />
         <div
           id="scrollbar"
-          className="relative w-full top-[121px] overflow-x-auto"
+          className="relative w-full top-[121px] overflow-x-auto overflow-y-scroll"
         >
           <Columns />
         </div>
