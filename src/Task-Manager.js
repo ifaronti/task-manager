@@ -30,6 +30,10 @@ export default function TaskManager() {
       return;
     }
     getCurrentBoard(board._id, settings, taskId, token);
+
+    const abortController = new AbortController()
+
+    return abortController.abort()
     // eslint-disable-next-line
   }, [board]);
 
